@@ -1,6 +1,6 @@
 {
-  "_from": "nodeactyl@^2.0.5",
-  "_id": "nodeactyl@2.0.5",
+  "_from": "nodeactyl@^2.0.7",
+  "_id": "nodeactyl@2.0.7",
   "_inBundle": false,
   "_integrity": "sha512-lDfGjGJsd0aBAlg+G+zdxwsZ/oQ/C+igHBQ0NqJgxBAUuCPAc+UIMGoInAZjtUKSZw56PNB6Gpgy/CwCjyEf1Q==",
   "_location": "/nodeactyl-v1-support",
@@ -10,12 +10,12 @@
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "nodeactyl@^2.0.5",
+    "raw": "nodeactyl@^2.0.7",
     "name": "nodeactyl-v1-support",
     "escapedName": "nodeactyl-v1-support",
     "rawSpec": "^2.0.5",
     "saveSpec": null,
-    "fetchSpec": "^2.0.5"
+    "fetchSpec": "^2.0.7"
   },
   "_requiredBy": [
     "#USER",
@@ -47,5 +47,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "2.0.5"
+  "version": "2.0.7"
 }
