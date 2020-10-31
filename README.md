@@ -19,7 +19,7 @@ NEW FEATURES:
 
 How to use?
 ---------------------------------------------------------------------------------------------------
-node.login('HOSTNAME', "APIKEY", (logged_in, msg) => {
+node.login('HOST', "APIKEY", (logged_in, msg) => {
 	console.log('Log in status: ' + logged_in); // return a Boolean (true/false) if logged in.
 })
 
