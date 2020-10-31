@@ -1,0 +1,51 @@
+{
+  "_from": "nodeactyl@^2.0.5",
+  "_id": "nodeactyl@2.0.5",
+  "_inBundle": false,
+  "_integrity": "sha512-lDfGjGJsd0aBAlg+G+zdxwsZ/oQ/C+igHBQ0NqJgxBAUuCPAc+UIMGoInAZjtUKSZw56PNB6Gpgy/CwCjyEf1Q==",
+  "_location": "/nodeactyl-v1-support",
+  "_phantomChildren": {
+    "ms": "2.0.0"
+  },
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "nodeactyl@^2.0.5",
+    "name": "nodeactyl-v1-support",
+    "escapedName": "nodeactyl-v1-support",
+    "rawSpec": "^2.0.5",
+    "saveSpec": null,
+    "fetchSpec": "^2.0.5"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nodeactyl-v1-support/-/nodeactyl-v1-support.tgz",
+  "_shasum": "c75b23577fe2ac1af20c5ac3e984d0a4aa068f23",
+  "_spec": "nodeactyl@^2.0.4",
+  "_where": "F:\\engin\\Documents\\Website",
+  "author": {
+    "name": "EiskalterFreund"
+  },
+  "bugs": {
+    "url": "https://github.com/EiskalterFreund/Nodeactyl-v1-support/"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "deprecated": false,
+  "description": "NodeJS API For pterodactyl panel",
+  "homepage": "https://github.com/EiskalterFreund/Nodeactyl-v1-support/",
+  "keywords": [
+    "project"
+  ],
+  "license": "MIT",
+  "main": "Nodeactyl.js",
+  "name": "nodeactyl-v1-support",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.0.5"
+}
