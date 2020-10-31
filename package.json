@@ -13,7 +13,7 @@
     "raw": "nodeactyl@^2.0.7",
     "name": "nodeactyl-v1-support",
     "escapedName": "nodeactyl-v1-support",
-    "rawSpec": "^2.0.5",
+    "rawSpec": "^2.0.7",
     "saveSpec": null,
     "fetchSpec": "^2.0.7"
   },
@@ -23,7 +23,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/nodeactyl-v1-support/-/nodeactyl-v1-support.tgz",
   "_shasum": "c75b23577fe2ac1af20c5ac3e984d0a4aa068f23",
-  "_spec": "nodeactyl@^2.0.4",
+  "_spec": "nodeactyl@^2.0.7",
   "_where": "F:\\engin\\Documents\\Website",
   "author": {
     "name": "EiskalterFreund"
