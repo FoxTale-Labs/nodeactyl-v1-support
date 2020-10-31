@@ -1,4 +1,4 @@
-const req = require('nodeactyl/client/ClientRequest');
+const req = require('../ClientRequest');
 
 /**
  * @param {String} ServerID ID of the server RAM Usage of
