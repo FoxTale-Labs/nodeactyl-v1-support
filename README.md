@@ -6,7 +6,7 @@ Type "npm install nodeactyl-v1-support"
 
 Then paste inside your "YOURAPP.js":
 "const nodeactyl = require('nodeactyl-v1-support')"
-"const node = node.Client".
+"const node = nodeactyl.Client".
 
 And now you are ready to go!
 ----------------------------------------------------------------------------------------------------
