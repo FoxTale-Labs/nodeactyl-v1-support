@@ -5,7 +5,7 @@ How to install?
 ----------------------------------------------------------------------------------------------------
 Install using `npm`:
 ```
-npm install nodeactyl-v1-support"
+npm install nodeactyl-v1-support
 ```
 Then paste this inside your `YOURAPP.js`:
 ```javascript
