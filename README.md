@@ -1,3 +1,8 @@
+![GitHub](https://img.shields.io/github/license/EiskalterFreund/nodeactyl-v1-support)
+![npm](https://img.shields.io/npm/v/nodeactyl-v1-support)
+![GitHub issues](https://img.shields.io/github/issues/EiskalterFreund/nodeactyl-v1-support)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/EiskalterFreund/nodeactyl-v1-support)
+
 I added pterodactyl v1 support to nodeactyl <br/>
 Promo to Linux123123 for making readme in concept with EiskalterFreund
 
