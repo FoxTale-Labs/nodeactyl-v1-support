@@ -1,7 +1,7 @@
-![GitHub](https://img.shields.io/github/license/EiskalterFreund/nodeactyl-v1-support)
-![npm](https://img.shields.io/npm/v/nodeactyl-v1-support)
-![GitHub issues](https://img.shields.io/github/issues/EiskalterFreund/nodeactyl-v1-support)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/EiskalterFreund/nodeactyl-v1-support)
+[![GitHub](https://img.shields.io/github/license/EiskalterFreund/nodeactyl-v1-support)](https://github.com/EiskalterFreund/nodeactyl-v1-support/blob/main/LICENSE)
+[![npm](https://img.shields.io/npm/v/nodeactyl-v1-support)](https://www.npmjs.com/package/nodeactyl-v1-support)
+[![GitHub issues](https://img.shields.io/github/issues/EiskalterFreund/nodeactyl-v1-support)](https://github.com/EiskalterFreund/nodeactyl-v1-support/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/EiskalterFreund/nodeactyl-v1-support)](https://github.com/EiskalterFreund/nodeactyl-v1-support)/pulls)
 
 I added pterodactyl v1 support to nodeactyl.
 Example project: https://github.com/BearTS/Pterodactyl-v1-DiscordBot
