@@ -35,6 +35,7 @@ class Request {
 
 		if (request == 'GetServerStatus' || request == 'GetCPUUsage' || request == 'GetDiskUsage' || request == 'GetRamUsage')
 		{
+			//Response in URL /resources
 			return axios.default.get(splitted + '/resources', {
 				maxRedirects: 5,
 				headers: {
@@ -63,6 +64,7 @@ class Request {
 		}
 		else
 		{
+			//Response without /resources
 			return axios.default.get(splitted, {
 				maxRedirects: 5,
 				headers: {
@@ -88,6 +90,12 @@ class Request {
 				}
 				else if (request == 'GetDisk') {
 					return bytesToSize(response.data.attributes.limits.disk + '000000');
+				}
+				else if (request == 'GetServerName') {
+					return response.data.attributes.name;
+				}
+				else if (request == 'GetNummericIP') {
+					return response.data.attributes.relationships.allocations.data.attributes.ip;
 				}
 			}).catch(error => {
 				const err = createError(request, error);
@@ -132,7 +140,7 @@ class Request {
 	}
 }
 
-const utilization = ['GetCPUCores', 'GetRam', 'GetDisk'];
+const utilization = ['GetCPUCores', 'GetRam', 'GetDisk', 'GetServerName', 'GetNummericIP'];
 const status = ['GetServerStatus', 'GetCPUUsage', 'GetRamUsage', 'GetDiskUsage']
 const info = ['GetServerInfo', 'IsOwner'];
 const powerAction = ['StartServer', 'StopServer', 'KillServer', 'RestartServer'];

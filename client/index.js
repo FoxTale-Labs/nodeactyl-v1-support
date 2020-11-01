@@ -7,10 +7,12 @@ const getserverstatus = require('./methods/getServerStatus.js');
 const isowner = require('./methods/isOwner.js');
 const getcpucores = require('./methods/getCPUCores.js');
 const getcpuusage = require('./methods/getCPUUsage.js');
-const getramusage = require('./methods/getRAMUsage');
+const getramusage = require('./methods/getRAMUsage.js');
 const getdiskusage = require('./methods/getDiskUsage.js');
 const getdisk = require('./methods/getDisk.js');
 const getram = require('./methods/getRam.js');
+const getnummericip = require('./methods/getNummericIP.js')
+const getservername = require('./methods/getServerName.js');
 
 // POST
 const startserver = require('./methods/startServer.js');
@@ -78,6 +80,8 @@ module.exports = {
 	getDiskUsage: getdiskusage,
 	getDisk: getdisk,
 	getRam: getram,
+	getServerName: getservername,
+	getNummericIP: getnummericip,
 
 	// POST
 	startServer: startserver,

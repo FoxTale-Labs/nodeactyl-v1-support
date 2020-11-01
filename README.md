@@ -15,6 +15,10 @@ NEW FEATURES:
 ---------------------------------------------------------------------------------------------------
 - Added v1 support of pterodactyl panel to nodeactyl
 - You can access Disk size and Ram size seperatly from usage
+- 2 new functions added:
+  GetServerName
+  GetNummericIP
+- Fixed some Bugs
 ---------------------------------------------------------------------------------------------------
 
 How to use?
