@@ -14,8 +14,8 @@ npm install nodeactyl-v1-support
 ```
 Then paste this inside your `YOURAPP.js`:
 ```javascript
-"const nodeactyl = require('nodeactyl-v1-support')"
-"const node = nodeactyl.Client".
+const nodeactyl = require('nodeactyl-v1-support')
+const node = nodeactyl.Client
 ```
 
 And now you are ready to go!
