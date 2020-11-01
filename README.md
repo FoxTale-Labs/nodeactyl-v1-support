@@ -1,4 +1,6 @@
 I added pterodactyl v1 support to nodeactyl <br/>
+Promo to Linux123123 for making readme in concept with EiskalterFreund
+
 How to install?
 ----------------------------------------------------------------------------------------------------
 Install using `npm`:
