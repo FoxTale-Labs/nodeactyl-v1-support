@@ -5,6 +5,7 @@
 
 I added pterodactyl v1 support to nodeactyl <br/>
 Promo to Linux123123 for making readme in concept with EiskalterFreund
+Credits to BearTS
 
 How to install?
 ----------------------------------------------------------------------------------------------------
@@ -14,8 +15,8 @@ npm install nodeactyl-v1-support
 ```
 Then paste this inside your `YOURAPP.js`:
 ```javascript
-const nodeactyl = require('nodeactyl-v1-support')
-const node = nodeactyl.Client
+"const nodeactyl = require('nodeactyl-v1-support')"
+"const node = nodeactyl.Client".
 ```
 
 And now you are ready to go!
@@ -49,7 +50,7 @@ How our Version numbers work:
 - The first number means the release number.
 - The second number means function release.
 - The third number means Bug fix version code.
-<p>Example: 1.1.2-2 = Release one, function update one, bug fix update two, smaller changes 2 (like new readme).</p>
+<p>Example: 1.2.2 = Release one, function update two, bug fix update two.</p>
 --------------------------------------------------------------------------------------------------
 
 Disclaimer
