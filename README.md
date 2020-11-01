@@ -49,7 +49,7 @@ How our Version numbers work:
 - The first number means the release number.
 - The second number means function release.
 - The third number means Bug fix version code.
-<p>Example: 1.2.2 = Release one, function update two, bug fix update two.</p>
+<p>Example: 1.1.2-2 = Release one, function update one, bug fix update two, smaller changes 2 (like new readme).</p>
 --------------------------------------------------------------------------------------------------
 
 Disclaimer
