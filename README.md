@@ -7,7 +7,7 @@ I added pterodactyl v1 support to nodeactyl <br/>
 Promo to Linux123123 for making readme in concept with EiskalterFreund and
 credits to BearTS
 
-IMPORTANT FOR ALL USERS WHO ALREADY ARE USING THIS PACKAGE:
+IMPORTANT FOR ALL USERS WHO ALREADY ARE USING THIS PACKAGE WITH VERSION 1.1.2-X OR 1.1.2:
 ----------------------------------------------------------------------------------------------------
 Reinstall my api because i messed up versions using `npm`:
 ```
