@@ -4,7 +4,8 @@
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/EiskalterFreund/nodeactyl-v1-support)](https://github.com/EiskalterFreund/nodeactyl-v1-support/pulls)
 
 I added pterodactyl v1 support to nodeactyl <br/>
-Promo to Linux123123 for making readme in concept with EiskalterFreund
+Promo to Linux123123 for making readme in concept with EiskalterFreund and
+credits to BearTS
 
 How to install?
 ----------------------------------------------------------------------------------------------------
