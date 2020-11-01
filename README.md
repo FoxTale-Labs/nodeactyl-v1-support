@@ -1,4 +1,4 @@
-I added pterodactyl v1 support to nodeactyl
+I added pterodactyl v1 support to nodeactyl.
 Example project: https://github.com/BearTS/Pterodactyl-v1-DiscordBot
 
 How to install?
