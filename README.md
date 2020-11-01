@@ -44,3 +44,17 @@ How our Version numbers work:
 Example:
 1.2.2 = Release one, function update two, bug fix update two
 --------------------------------------------------------------------------------------------------
+
+Disclaimer
+--------------------------------------------------------------------------------------------------
+I am not responsible for any damages that you cause to your servers/nodes by using this API.
+
+Remember: This API can potentially be dangerous with the ability to Delete Servers/Nodes at an instant 
+is extremely easy!
+
+It is not our fault if your API key is revealed to the public. When asking for help please do not 
+send the full stack error. This will reveal your ENTIRE Host/Application API key in the request, 
+if someone asks you to show them the error it should only be trusted sources! (Such as the 
+Pterodactyl Team and I). You should also have your API key changed every 1-3 days to 
+prevent issues like this.
+--------------------------------------------------------------------------------------------------
