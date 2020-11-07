@@ -33,7 +33,7 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.21.0"
   },
   "deprecated": false,
   "description": "NodeJS API For pterodactyl panel",
