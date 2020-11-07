@@ -4,16 +4,8 @@
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/EiskalterFreund/nodeactyl-v1-support)](https://github.com/EiskalterFreund/nodeactyl-v1-support/pulls)
 
 I added pterodactyl v1 support to nodeactyl <br/>
-Promo to Linux123123 for making readme in concept with EiskalterFreund and
-credits to BearTS
-
-IMPORTANT FOR ALL USERS WHO ALREADY ARE USING THIS PACKAGE WITH VERSION 1.1.2-X OR 1.1.2:
-----------------------------------------------------------------------------------------------------
-Reinstall my api because i messed up versions using `npm`:
-```
-npm install nodeactyl-v1-support
-```
-----------------------------------------------------------------------------------------------------
+Promo to Linux123123 for making readme in concept with EiskalterFreund
+Credits to BearTS
 
 How to install?
 ----------------------------------------------------------------------------------------------------
@@ -23,8 +15,10 @@ npm install nodeactyl-v1-support
 ```
 Then paste this inside your `YOURAPP.js`:
 ```javascript
-"const nodeactyl = require('nodeactyl-v1-support')"
-"const node = nodeactyl.Client".
+const nodeactyl = require('nodeactyl-v1-support')
+const node = nodeactyl.Client
+
+const nodeApplication = nodeactyl.Application
 ```
 
 And now you are ready to go!
@@ -38,10 +32,19 @@ node.login('HOST', "APIKEY", (logged_in, msg) => {
 	console.log('Log in status: ' + logged_in); // return a Boolean (true/false) if logged in.
 })
 
+nodeApplication.login('HOST', "APIKEY", (logged_in, msg) => {
+	console.log('Log in status: ' + logged_in); // return a Boolean (true/false) if logged in.
+})
+
 ```
 And then you can use any funtion you want:
 ```javascript
 node.FUNCTIONNAME('server_id').then((response) => {
+	// and now functions with response for example "consle.log(response)" or what you want
+})
+
+//This is for accessing admin stuff like createServer !!WE COULDN'T TEST THE FUNCTIONS!!
+nodeApplication.FUNCTIONNAME().then((response) => {
 	// and now functions with response for example "consle.log(response)" or what you want
 })
 ```
@@ -58,7 +61,7 @@ How our Version numbers work:
 - The first number means the release number.
 - The second number means function release.
 - The third number means Bug fix version code.
-<p>Example: 1.2.2 = Release one, function update two, bug fix update two.</p>
+<p>Example: 1.2.3 = Release one, function update two, bug fix update two.</p>
 --------------------------------------------------------------------------------------------------
 
 Disclaimer

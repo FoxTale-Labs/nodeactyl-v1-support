@@ -97,6 +97,9 @@ class Request {
 				else if (request == 'GetNummericIP') {
 					return response.data.attributes.relationships.allocations.data.attributes.ip;
 				}
+				else if (request == 'GetServerPort') {
+					return response.data.attributes.relationships.allocations.data.attributes.port;
+				}
 			}).catch(error => {
 				const err = createError(request, error);
 				if (err) throw err;
@@ -140,7 +143,7 @@ class Request {
 	}
 }
 
-const utilization = ['GetCPUCores', 'GetRam', 'GetDisk', 'GetServerName', 'GetNummericIP'];
+const utilization = ['GetCPUCores', 'GetRam', 'GetDisk', 'GetServerName', 'GetNummericIP', 'GetServerPort'];
 const status = ['GetServerStatus', 'GetCPUUsage', 'GetRamUsage', 'GetDiskUsage']
 const info = ['GetServerInfo', 'IsOwner'];
 const powerAction = ['StartServer', 'StopServer', 'KillServer', 'RestartServer'];

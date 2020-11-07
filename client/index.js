@@ -12,6 +12,7 @@ const getdiskusage = require('./methods/getDiskUsage.js');
 const getdisk = require('./methods/getDisk.js');
 const getram = require('./methods/getRam.js');
 const getnummericip = require('./methods/getNummericIP.js')
+const getserverport = require('./methods/getServerPort.js')
 const getservername = require('./methods/getServerName.js');
 
 // POST
@@ -82,6 +83,7 @@ module.exports = {
 	getRam: getram,
 	getServerName: getservername,
 	getNummericIP: getnummericip,
+	getServerPort: getserverport,
 
 	// POST
 	startServer: startserver,
