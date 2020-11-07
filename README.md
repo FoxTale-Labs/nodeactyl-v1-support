@@ -17,8 +17,6 @@ Then paste this inside your `YOURAPP.js`:
 ```javascript
 const nodeactyl = require('nodeactyl-v1-support')
 const node = nodeactyl.Client
-
-const nodeApplication = nodeactyl.Application
 ```
 
 And now you are ready to go!
@@ -32,26 +30,13 @@ node.login('HOST', "APIKEY", (logged_in, msg) => {
 	console.log('Log in status: ' + logged_in); // return a Boolean (true/false) if logged in.
 })
 
-nodeApplication.login('HOST', "APIKEY", (logged_in, msg) => {
-	console.log('Log in status: ' + logged_in); // return a Boolean (true/false) if logged in.
-})
-
 ```
 And then you can use any funtion you want:
 ```javascript
 node.FUNCTIONNAME('server_id').then((response) => {
 	// and now functions with response for example "consle.log(response)" or what you want
 })
-
-//This is for accessing admin stuff like createServer !!WE COULDN'T TEST THE FUNCTIONS!!
-nodeApplication.FUNCTIONNAME().then((response) => {
-	// and now functions with response for example "consle.log(response)" or what you want
-})
 ```
-
-node.FUNCTIONNAME('server_id').then((response) => {
-	// and now functions with response for example "consle.log(response)" or what you want
-})
 
 NOTE: You can use every function from original nodeactyl: https://docs.nodeactyl.xyz/
 ---------------------------------------------------------------------------------------------------
@@ -61,7 +46,7 @@ How our Version numbers work:
 - The first number means the release number.
 - The second number means function release.
 - The third number means Bug fix version code.
-<p>Example: 1.2.3 = Release one, function update two, bug fix update two.</p>
+<p>Example: 1.2.4 = Release one, function update two, bug fix update two.</p>
 --------------------------------------------------------------------------------------------------
 
 Disclaimer
