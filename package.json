@@ -1,6 +1,6 @@
 {
-  "_from": "nodeactyl@^1.2.5",
-  "_id": "nodeactyl@1.2.5",
+  "_from": "nodeactyl@^1.3.0",
+  "_id": "nodeactyl@1.3.0",
   "_inBundle": false,
   "_integrity": "sha512-lDfGjGJsd0aBAlg+G+zdxwsZ/oQ/C+igHBQ0NqJgxBAUuCPAc+UIMGoInAZjtUKSZw56PNB6Gpgy/CwCjyEf1Q==",
   "_location": "/nodeactyl-v1-support",
@@ -10,12 +10,12 @@
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "nodeactyl-v1-support@^1.2.5",
+    "raw": "nodeactyl-v1-support@^1.3.0",
     "name": "nodeactyl-v1-support",
     "escapedName": "nodeactyl-v1-support",
-    "rawSpec": "^1.2.5",
+    "rawSpec": "^1.3.0",
     "saveSpec": null,
-    "fetchSpec": "^1.2.5"
+    "fetchSpec": "^1.3.0"
   },
   "_requiredBy": [
     "#USER",
@@ -23,7 +23,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/nodeactyl-v1-support/-/nodeactyl-v1-support.tgz",
   "_shasum": "c75b23577fe2ac1af20c5ac3e984d0a4aa068f23",
-  "_spec": "nodeactyl-v1-support@^1.2.5",
+  "_spec": "nodeactyl-v1-support@^1.3.0",
   "author": {
     "name": "EiskalterFreund"
   },
@@ -46,5 +46,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.2.5"
+  "version": "1.3.0"
 }
