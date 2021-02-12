@@ -15,9 +15,9 @@ npm install nodeactyl-v1-support
 ```
 Then paste this inside your `YOURAPP.js`:
 ```javascript
-const nodeactyl = require('nodeactyl-v1-support')
-const node = nodeactyl.Client
-```
+const node = require('nodeactyl-v1-support');
+const client = node.Client
+const admin = node.Admin```
 
 And now you are ready to go!
 ----------------------------------------------------------------------------------------------------
@@ -26,15 +26,30 @@ How to use?
 ----------------------------------------------------------------------------------------------------
 To login to your Pterodactyl panel use:
 ```javascript
-node.login('HOST', "APIKEY", (logged_in, msg) => {
-	console.log('Log in status: ' + logged_in); // return a Boolean (true/false) if logged in.
+client.login('https://gp.falixnodes.net', 'YOUR CLIENT API KEY', (logged_in, msg) => 
+{
+    console.log('Log in status CLIENT: ' + logged_in) // return a Boolean (true/false) if logged in.
+    if (!logged_in) {
+        console.log(msg.split("(Application)")[0] + "(CLIENT)") // logs the error
+    }
 })
 
+// This only if you have an admin api key
+admin.login("https://gp.falixnodes.net", "YOUR ADMIN API KEY", (logged_in, msg) => {
+    console.log("Log in statu ADMIN: " + logged_in) // return a Boolean (true/false) if logged in.
+    if (!logged_in) {
+        console.log(msg.split("(Application)")[0] + "(ADMIN)") // logs the error
+    }
+})
 ```
 And then you can use any funtion you want:
 ```javascript
-node.FUNCTIONNAME('server_id').then((response) => {
+client.FUNCTIONNAME('server_id').then((response) => {
 	// and now functions with response for example "consle.log(response)" or what you want
+})
+
+admin.FUNCTIONNAME(<NEEDED VALUES>).then((response) => {
+	
 })
 ```
 
