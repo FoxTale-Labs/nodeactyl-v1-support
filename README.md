@@ -17,7 +17,8 @@ Then paste this inside your `YOURAPP.js`:
 ```javascript
 const node = require('nodeactyl-v1-support');
 const client = node.Client
-const admin = node.Admin```
+const admin = node.Admin
+```
 
 And now you are ready to go!
 ----------------------------------------------------------------------------------------------------
