@@ -3,6 +3,7 @@ const axios = require('axios');
 // POST
 const createuser = require('./methods/createUser.js');
 const createserver = require('./methods/createServer.js');
+const updatebuild = require('./methods/updateBuild.js');
 const createnode = require('./methods/createNode.js');
 const suspendserver = require('./methods/suspendServer.js');
 const unsuspendserver = require('./methods/unSuspendServer.js');
@@ -85,6 +86,7 @@ module.exports = {
 	suspendServer: suspendserver,
 	unSuspendServer: unsuspendserver,
 	createDatabase: createdatabase,
+	updateBuild: updatebuild,
 	
 	// GET
 	getAllServers: getallservers,

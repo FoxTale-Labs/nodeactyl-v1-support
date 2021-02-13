@@ -96,7 +96,7 @@ class Request {
 			}
 		}
 		
-		if (request == "CreateServer") {
+		if (request == "CreateServer" || request == "UpdateBuild") {
 			return axios({
 				url: splitted,
 				method: 'POST',
@@ -111,6 +111,8 @@ class Request {
 			}).then(function(response) {
 				if (request == 'CreateServer') {
 					// If people want make it return the server object
+					return response.data.attributes;
+				} else if (request == "UpdateBuild") {
 					return response.data.attributes;
 				}
 			}).catch(error => {
@@ -250,7 +252,7 @@ class Request {
 	}
 }
 
-const server = ['CreateServer', 'GetAllServers'];
+const server = ['CreateServer', 'GetAllServers', 'UpdateBuild'];
 const users = ['CreateUser', 'GetAllUsers'];
 const user = ['EditUser', 'DeleteUser', 'GetUserInfo'];
 const nodes = ['GetAllNodes', 'CreateNode'];
@@ -261,6 +263,9 @@ function getUrl(request, host, data) { // _data = nullable
 	}
 	else if (server.indexOf(request) > -1) {
 		return host + '/api/application/servers';
+	}
+	else if (server.indexOf(request) > -1) {
+		return host + '/api/application/servers/' + data + '/build';
 	}
 	else if (users.indexOf(request) > -1) {
 		return host + '/api/application/users';
