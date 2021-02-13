@@ -98,7 +98,7 @@ class Request {
 		
 		if (request == "CreateServer") {
 			return axios({
-				url: splitted + "/servers,
+				url: splitted + "/servers",
 				method: 'POST',
 				followRedirect: true,
 				maxRedirects: 5,
@@ -119,7 +119,7 @@ class Request {
 			});
 		} else if (request == "CreateNode") {
 			return axios({
-				url: splitted + "/nodes,
+				url: splitted + "/nodes",
 				method: 'POST',
 				followRedirect: true,
 				maxRedirects: 5,
@@ -139,7 +139,7 @@ class Request {
 			});
 		} else if (request == "CreateUser") {
 			return axios({
-				url: splitted + "/users,
+				url: splitted + "/users",
 				method: 'POST',
 				followRedirect: true,
 				maxRedirects: 5,
