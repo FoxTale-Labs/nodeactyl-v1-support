@@ -19,15 +19,15 @@ const req = require('../ApplicationRequest.js');
  */
 function createServer(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
 	StartupCmd, RAM, Swap, Disk, IO, CPU,
-	AmountOfDatabases, AmountOfAllocations) {
-	const data = makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage, StartupCmd, RAM, Swap, Disk, IO, CPU, AmountOfDatabases, AmountOfAllocations);
+	AmountOfDatabases, AmountOfAllocations, backups) {
+	const data = makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage, StartupCmd, RAM, Swap, Disk, IO, CPU, AmountOfDatabases, AmountOfAllocations, backups);
 	const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
 	return Req.postRequest('CreateServer', data, null);
 }
 
 function makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
 	StartupCmd, RAM, Swap, Disk, IO, CPU,
-	AmountOfDatabases, AmountOfAllocations) {
+	AmountOfDatabases, AmountOfAllocations, backups) {
 	return {
 		'name': NameOfServer,
 		'user': OwnerID,
@@ -46,6 +46,7 @@ function makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
 		'feature_limits': {
 			'databases': AmountOfDatabases,
 			'allocations': AmountOfAllocations,
+			'backups': backups
 		},
 		'environment': {
 			'DL_VERSION': Version,
