@@ -7,8 +7,24 @@ class Request {
 	}
 
 	getRequest(request, data) {
-		const URL = getUrl(request, this.host, data);
-		return axios.default.get(URL, {
+		const URL = getUrl(request, this.host, data); // data is nullable
+
+		var splittedURL = URL.split('/')
+		var splitted = '';
+		var i = 0;
+		for (i = 0; i < splittedURL.length; i++)
+		{
+			if (splittedURL[i] == 'resources') { }
+			else
+			{
+				if (splittedURL[i] == 'https:')
+					splitted += splittedURL[i];
+				else
+					splitted += '/' + splittedURL[i];
+			}
+		}
+
+		return axios.default.get(splitted, {
 			maxRedirects: 5,
 			headers: {
 				'Authorization': 'Bearer ' + this.key,
@@ -42,48 +58,107 @@ class Request {
 	}
 
 	postRequest(request, data, data_) { // data_ is the d normall
-		const URL = getUrl(request, this.host, data_);
-		return axios({
-			url: URL,
-			method: 'POST',
-			followRedirect: true,
-			maxRedirects: 5,
-			headers: {
-				'Authorization': 'Bearer ' + this.key,
-				'Content-Type': 'application/json',
-				'Accept': 'Application/vnd.pterodactyl.v1+json',
-			},
-			data: data,
-		}).then(function(response) {
-			if (request == 'CreateServer') {
-				// If people want make it return the server object
-				return response.data.attributes;
+		const URL = getUrl(request, this.host, data); // data is nullable
+
+		var splittedURL = URL.split('/')
+		var splitted = '';
+		var i = 0;
+		for (i = 0; i < splittedURL.length; i++)
+		{
+			if (splittedURL[i] == 'resources') { }
+			else
+			{
+				if (splittedURL[i] == 'https:')
+					splitted += splittedURL[i];
+				else
+					splitted += '/' + splittedURL[i];
 			}
-			else if (request == 'CreateUser') {
-				return response.data.attributes;
-			}
-			else if (request == 'CreateNode') {
-				return response.data.attributes;
-			}
-			else if (request == 'SuspendServer') {
-				return createObjectSuccess('Server suspended successfully');
-			}
-			else if (request == 'UnSuspendServer') {
-				return createObjectSuccess('Server unsuspended successfully');
-			}
-			else if(request == 'CreateDatabase') {
-				return response.data.attributes;
-			}
-		}).catch(error => {
-			const err = createError(request, error, data);
-			if (err) throw err;
-		});
+		}
+		
+		if (request == "CreateServer") {
+			return axios({
+				url: splitted + "/servers,
+				method: 'POST',
+				followRedirect: true,
+				maxRedirects: 5,
+				headers: {
+					'Authorization': 'Bearer ' + this.key,
+					'Content-Type': 'application/json',
+					'Accept': 'Application/vnd.pterodactyl.v1+json',
+				},
+				data: data,
+			}).then(function(response) {
+				if (request == 'CreateServer') {
+					// If people want make it return the server object
+					return response.data.attributes;
+				}
+			}).catch(error => {
+				const err = createError(request, error, data);
+				if (err) throw err;
+			});
+		} else if (request == "CreateNode") {
+			return axios({
+				url: splitted + "/nodes,
+				method: 'POST',
+				followRedirect: true,
+				maxRedirects: 5,
+				headers: {
+					'Authorization': 'Bearer ' + this.key,
+					'Content-Type': 'application/json',
+					'Accept': 'Application/vnd.pterodactyl.v1+json',
+				},
+				data: data,
+			}).then(function(response) {
+				if (request == 'CreateNode') {
+					return response.data.attributes;
+				}
+			}).catch(error => {
+				const err = createError(request, error, data);
+				if (err) throw err;
+			});
+		} else if (request == "CreateUser") {
+			return axios({
+				url: splitted + "/users,
+				method: 'POST',
+				followRedirect: true,
+				maxRedirects: 5,
+				headers: {
+					'Authorization': 'Bearer ' + this.key,
+					'Content-Type': 'application/json',
+					'Accept': 'Application/vnd.pterodactyl.v1+json',
+				},
+				data: data,
+			}).then(function(response) {
+				if (request == 'CreateUser') {
+					return response.data.attributes;
+				}
+			}).catch(error => {
+				const err = createError(request, error, data);
+				if (err) throw err;
+			});
+		}
 	}
 	// Third arg is nullable
-	patchRequest(request, data, _data) {
-		const URL = getUrl(request, this.host, _data); // _data = nullable
+	patchRequest(request, data, _data) {		
+		const URL = getUrl(request, this.host, data); // data is nullable
+
+		var splittedURL = URL.split('/')
+		var splitted = '';
+		var i = 0;
+		for (i = 0; i < splittedURL.length; i++)
+		{
+			if (splittedURL[i] == 'resources') { }
+			else
+			{
+				if (splittedURL[i] == 'https:')
+					splitted += splittedURL[i];
+				else
+					splitted += '/' + splittedURL[i];
+			}
+		}
+		
 		return axios({
-			url: URL,
+			url: splitted,
 			method: 'PATCH',
 			followRedirect: true,
 			maxRedirects: 5,
@@ -108,9 +183,25 @@ class Request {
 	}
 
 	deleteRequest(request, data) {
-		const URL = getUrl(request, this.host, data);
+		const URL = getUrl(request, this.host, data); // data is nullable
+
+		var splittedURL = URL.split('/')
+		var splitted = '';
+		var i = 0;
+		for (i = 0; i < splittedURL.length; i++)
+		{
+			if (splittedURL[i] == 'resources') { }
+			else
+			{
+				if (splittedURL[i] == 'https:')
+					splitted += splittedURL[i];
+				else
+					splitted += '/' + splittedURL[i];
+			}
+		}
+		
 		return axios({
-			url: URL,
+			url: splitted,
 			method: 'DELETE',
 			followRedirect: true,
 			maxRedirects: 5,
