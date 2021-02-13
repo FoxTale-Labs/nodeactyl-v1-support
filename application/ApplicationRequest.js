@@ -23,38 +23,59 @@ class Request {
 					splitted += '/' + splittedURL[i];
 			}
 		}
-
-		return axios.default.get(splitted, {
-			maxRedirects: 5,
-			headers: {
-				'Authorization': 'Bearer ' + this.key,
-				'Content-Type': 'application/json',
-				'Accept': 'Application/vnd.pterodactyl.v1+json',
-			},
-		}).then(response => {
-			if (request == 'GetAllServers') {
-				return response.data.data;
-			}
-			else if (request == 'GetAllUsers') {
-				return response.data.data;
-			}
-			else if (request == 'GetUserInfo') {
-				return response.data.attributes;
-			}
-			else if (request == 'GetNodeInfo') {
-				return response.data;
-			}
-			else if (request == 'GetAllNodes') {
-				return response.data.data;
-			} 
-			else if(request == 'GetAllUsersPagination') {
-				var PaginationAndUsers = Object.assign({users: response.data.data}, response.data.meta.pagination);
-				return PaginationAndUsers;
-			}
-		}).catch(error => {
-			const err = createError(request, error, data);
-			if (err) throw err;
-		});
+		if (request == "GetAllServers") {
+			return axios.default.get(splitted + "/servers", {
+				maxRedirects: 5,
+				headers: {
+					'Authorization': 'Bearer ' + this.key,
+					'Content-Type': 'application/json',
+					'Accept': 'Application/vnd.pterodactyl.v1+json',
+				},
+			}).then(response => {
+				if (request == 'GetAllServers') {
+					return response.data.data;
+				}
+			}).catch(error => {
+				const err = createError(request, error, data);
+				if (err) throw err;
+			});
+		} else if (request == "GetUserInfo" || request == "GetAllUsers") {
+			return axios.default.get(splitted + "/servers", {
+				maxRedirects: 5,
+				headers: {
+					'Authorization': 'Bearer ' + this.key,
+					'Content-Type': 'application/json',
+					'Accept': 'Application/vnd.pterodactyl.v1+json',
+				},
+			}).then(response => {
+				if (request == 'GetAllUsers') {
+					return response.data.data;
+				} else if (request == 'GetUserInfo') {
+					return response.data.data;
+				}
+			}).catch(error => {
+				const err = createError(request, error, data);
+				if (err) throw err;
+			});
+		} else if (request == "GetNodeInfo" || request == "GetAllNodes") {
+			return axios.default.get(splitted + "/servers", {
+				maxRedirects: 5,
+				headers: {
+					'Authorization': 'Bearer ' + this.key,
+					'Content-Type': 'application/json',
+					'Accept': 'Application/vnd.pterodactyl.v1+json',
+				},
+			}).then(response => {
+				if (request == 'GetNodeInfo') {
+					return response.data.data;
+				} else if (request == 'GetAllNodes') {
+					return response.data.data;
+				}
+			}).catch(error => {
+				const err = createError(request, error, data);
+				if (err) throw err;
+			});
+		}
 	}
 
 	postRequest(request, data, data_) { // data_ is the d normall
