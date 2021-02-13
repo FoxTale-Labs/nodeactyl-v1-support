@@ -71,4 +71,4 @@ function makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
 		'oom_disabled': true,
 	};
 }
-module.exports = createServer;
+module.exports = updateBuild;
