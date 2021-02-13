@@ -27,7 +27,7 @@ How to use?
 ----------------------------------------------------------------------------------------------------
 To login to your Pterodactyl panel use:
 ```javascript
-client.login('https://gp.falixnodes.net', 'YOUR CLIENT API KEY', (logged_in, msg) => 
+client.login('YOUR HOST', 'YOUR CLIENT API KEY', (logged_in, msg) => 
 {
     console.log('Log in status CLIENT: ' + logged_in) // return a Boolean (true/false) if logged in.
     if (!logged_in) {
@@ -36,7 +36,7 @@ client.login('https://gp.falixnodes.net', 'YOUR CLIENT API KEY', (logged_in, msg
 })
 
 // This only if you have an admin api key
-admin.login("https://gp.falixnodes.net", "YOUR ADMIN API KEY", (logged_in, msg) => {
+admin.login("YOUR HOST", "YOUR ADMIN API KEY", (logged_in, msg) => {
     console.log("Log in statu ADMIN: " + logged_in) // return a Boolean (true/false) if logged in.
     if (!logged_in) {
         console.log(msg.split("(Application)")[0] + "(ADMIN)") // logs the error
