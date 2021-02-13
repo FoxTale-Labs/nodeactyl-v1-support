@@ -24,7 +24,7 @@ class Request {
 			}
 		}
 		if (request == "GetAllServers") {
-			return axios.default.get(splitted + "/servers", {
+			return axios.default.get(splitted, {
 				maxRedirects: 5,
 				headers: {
 					'Authorization': 'Bearer ' + this.key,
@@ -40,7 +40,7 @@ class Request {
 				if (err) throw err;
 			});
 		} else if (request == "GetUserInfo" || request == "GetAllUsers") {
-			return axios.default.get(splitted + "/servers", {
+			return axios.default.get(splitted, {
 				maxRedirects: 5,
 				headers: {
 					'Authorization': 'Bearer ' + this.key,
@@ -98,7 +98,7 @@ class Request {
 		
 		if (request == "CreateServer") {
 			return axios({
-				url: splitted + "/servers",
+				url: splitted,
 				method: 'POST',
 				followRedirect: true,
 				maxRedirects: 5,
@@ -119,7 +119,7 @@ class Request {
 			});
 		} else if (request == "CreateNode") {
 			return axios({
-				url: splitted + "/nodes",
+				url: splitted,
 				method: 'POST',
 				followRedirect: true,
 				maxRedirects: 5,
@@ -139,7 +139,7 @@ class Request {
 			});
 		} else if (request == "CreateUser") {
 			return axios({
-				url: splitted + "/users",
+				url: splitted,
 				method: 'POST',
 				followRedirect: true,
 				maxRedirects: 5,
