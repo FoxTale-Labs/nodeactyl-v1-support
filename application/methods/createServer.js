@@ -57,6 +57,9 @@ function makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
 			'MC_VERSION': Version,
 			'BUILD_NUMBER': Version,
 			'INSTALL_REPO': Version,
+			"BOT_JS_FILE": "index.js",
+			"AUTO_UPDATE": true,
+			"USER_UPLOAD": true
 		},
 		'allocation': {
 			'default': 1,
