@@ -31,7 +31,7 @@ function makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
 	return {
 		'name': NameOfServer,
 		'user': OwnerID,
-		'description': 'A Nodeactyl server',
+		'description': 'A Nodeactyl-v1-support server',
 		'egg': EggID,
 		'pack': NestID,
 		'docker_image': DockerImage,
@@ -61,14 +61,8 @@ function makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
 			"AUTO_UPDATE": true,
 			"USER_UPLOAD": true
 		},
-		'allocation': {
-			'default': 1,
-			'additional': [],
-		},
-		'deploy': {
-			'locations': [1],
-			'dedicated_ip': false,
-			'port_range': [],
+		"allocation": {
+			"default": 1
 		},
 		'start_on_completion': true,
 		'skip_scripts': false,

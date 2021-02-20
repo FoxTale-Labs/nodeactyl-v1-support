@@ -17,58 +17,30 @@ const req = require('../ApplicationRequest.js');
  *
  * @yields Object (refer to docs for schema);
  */
-function updateBuild(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
-	StartupCmd, RAM, Swap, Disk, IO, CPU,
-	AmountOfDatabases, AmountOfAllocations) {
-	const data = makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage, StartupCmd, RAM, Swap, Disk, IO, CPU, AmountOfDatabases, AmountOfAllocations);
+function updateBuild(id, RAM, Disk, IO, CPU,
+	AmountOfDatabases, AmountOfAllocations, Backups) {
+	const data = makeData(id, RAM, Disk, IO, CPU,
+		AmountOfDatabases, AmountOfAllocations, Backups);
 	const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
-	return Req.postRequest('UpdateBuild', data, null);
+	return Req.patchRequest('UpdateBuild', data, null);
 }
 
-function makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
-	StartupCmd, RAM, Swap, Disk, IO, CPU,
-	AmountOfDatabases, AmountOfAllocations) {
+function makeData(id, RAM, Disk, IO, CPU,
+	AmountOfDatabases, AmountOfAllocations, Backups) {
 	return {
-		'name': NameOfServer,
-		'user': OwnerID,
-		'description': 'A Nodeactyl server',
-		'egg': EggID,
-		'pack': NestID,
-		'docker_image': DockerImage,
-		'startup': StartupCmd,
-		'limits': {
-			'memory': RAM,
-			'swap': Swap,
-			'disk': Disk,
-			'io': IO,
-			'cpu': CPU,
-		},
+		"id": id,
+		"allocation": "1",
+		'memory': RAM,
+		'swap': "0",
+		'disk': Disk,
+		'io': IO,
+		'cpu': CPU,
+		"threads": null,
 		'feature_limits': {
 			'databases': AmountOfDatabases,
 			'allocations': AmountOfAllocations,
-		},
-		'environment': {
-			'DL_VERSION': Version,
-			'SERVER_JARFILE': 'server.jar',
-			'VANILLA_VERSION': Version,
-			'BUNGEE_VERSION': Version,
-			'PAPER_VERSION': Version,
-			'MC_VERSION': Version,
-			'BUILD_NUMBER': Version,
-			'INSTALL_REPO': Version,
-		},
-		'allocation': {
-			'default': 1,
-			'additional': [],
-		},
-		'deploy': {
-			'locations': [1],
-			'dedicated_ip': false,
-			'port_range': [],
-		},
-		'start_on_completion': true,
-		'skip_scripts': false,
-		'oom_disabled': true,
+			"backups": Backups
+		}
 	};
 }
 module.exports = updateBuild;

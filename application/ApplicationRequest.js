@@ -179,7 +179,7 @@ class Request {
 					splitted += '/' + splittedURL[i];
 			}
 		}
-		
+
 		return axios({
 			url: splitted,
 			method: 'PATCH',
@@ -197,6 +197,8 @@ class Request {
 				return response.data.attributes;
 			}
 			else if (request == 'CreateUser') {
+				return response.data.attributes;
+			} else if (request == "UpdateBuild") {
 				return response.data.attributes;
 			}
 		}).catch(error => {
@@ -252,7 +254,8 @@ class Request {
 	}
 }
 
-const server = ['CreateServer', 'GetAllServers', 'UpdateBuild'];
+const update = ['UpdateBuild']
+const server = ['CreateServer', 'GetAllServers'];
 const users = ['CreateUser', 'GetAllUsers'];
 const user = ['EditUser', 'DeleteUser', 'GetUserInfo'];
 const nodes = ['GetAllNodes', 'CreateNode'];
@@ -266,6 +269,9 @@ function getUrl(request, host, data) { // _data = nullable
 	}
 	else if (server.indexOf(request) > -1) {
 		return host + '/api/application/servers/' + data + '/build';
+	}
+	else if (update.indexOf(request) > -1) {
+		return host + '/api/application/servers/' + data.id + '/build';
 	}
 	else if (users.indexOf(request) > -1) {
 		return host + '/api/application/users';

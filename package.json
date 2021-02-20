@@ -1,33 +1,31 @@
 {
-  "_from": "nodeactyl@^1.4.7",
-  "_id": "nodeactyl@1.4.7",
+  "_from": "nodeactyl-v1-support@^1.4.8",
+  "_id": "nodeactyl-v1-support@1.4.8",
   "_inBundle": false,
-  "_integrity": "sha512-lDfGjGJsd0aBAlg+G+zdxwsZ/oQ/C+igHBQ0NqJgxBAUuCPAc+UIMGoInAZjtUKSZw56PNB6Gpgy/CwCjyEf1Q==",
+  "_integrity": "sha512-W3LTjcsJo4/VqrYgu2yr2VCtOaF3wpL3Y+xJKAZmFSzUrDACqGDnNnRasCde0eo1nJ8nYPi5HvBOW2z1WuNHIg==",
   "_location": "/nodeactyl-v1-support",
-  "_phantomChildren": {
-    "ms": "2.0.0"
-  },
+  "_phantomChildren": {},
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "nodeactyl-v1-support@^1.4.7",
+    "raw": "nodeactyl-v1-support@^1.4.8",
     "name": "nodeactyl-v1-support",
     "escapedName": "nodeactyl-v1-support",
-    "rawSpec": "^1.4.7",
+    "rawSpec": "^1.4.8",
     "saveSpec": null,
-    "fetchSpec": "^1.4.7"
+    "fetchSpec": "^1.4.8"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/nodeactyl-v1-support/-/nodeactyl-v1-support.tgz",
-  "_shasum": "c75b23577fe2ac1af20c5ac3e984d0a4aa068f23",
-  "_spec": "nodeactyl-v1-support@^1.4.7",
+  "_resolved": "https://registry.npmjs.org/nodeactyl-v1-support/-/nodeactyl-v1-support-1.4.7.tgz",
+  "_shasum": "7ed937e8e7fc350fc1adc9e5cff2cbc3ac6d0916",
+  "_spec": "nodeactyl-v1-support@^1.4.8",
+  "_where": "/root/client",
   "author": {
     "name": "EiskalterFreund"
   },
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/EiskalterFreund/Nodeactyl-v1-support/"
   },
@@ -41,10 +39,11 @@
   "keywords": [
     "project, api, pterodactyl"
   ],
+  "license": "MIT",
   "main": "Nodeactyl.js",
   "name": "nodeactyl-v1-support",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.4.7"
+  "version": "1.4.8"
 }
