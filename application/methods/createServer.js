@@ -17,15 +17,15 @@ const req = require('../ApplicationRequest.js');
  *
  * @yields Object (refer to docs for schema);
  */
-function createServer(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
+function createServer(allocation, Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
 	StartupCmd, RAM, Swap, Disk, IO, CPU,
 	AmountOfDatabases, AmountOfAllocations, backups) {
-	const data = makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage, StartupCmd, RAM, Swap, Disk, IO, CPU, AmountOfDatabases, AmountOfAllocations, backups);
+	const data = makeData(allocation, Version, NameOfServer, OwnerID, NestID, EggID, DockerImage, StartupCmd, RAM, Swap, Disk, IO, CPU, AmountOfDatabases, AmountOfAllocations, backups);
 	const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
 	return Req.postRequest('CreateServer', data, null);
 }
 
-function makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
+function makeData(allocation, Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
 	StartupCmd, RAM, Swap, Disk, IO, CPU,
 	AmountOfDatabases, AmountOfAllocations, backups) {
 	return {
@@ -62,7 +62,8 @@ function makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
 			"USER_UPLOAD": true
 		},
 		"allocation": {
-			"default": 1
+			"default": allocation,
+			'additional': []
 		},
 		'start_on_completion': true,
 		'skip_scripts': false,

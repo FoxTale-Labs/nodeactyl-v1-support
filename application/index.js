@@ -15,6 +15,7 @@ const getallusers = require('./methods/getAllUsers.js');
 const getuserinfo = require('./methods/getUserInfo.js');
 const getnode = require('./methods/getNodeInfo.js');
 const getallnodes = require('./methods/getAllNodes.js');
+const getallallocations = require("./methods/getAllAllocations.js")
 
 // PATCH
 const updateuser = require('./methods/updateUser.js');
@@ -94,6 +95,7 @@ module.exports = {
 	getUserInfo: getuserinfo,
 	getNodeInfo: getnode,
 	getAllNodes: getallnodes,
+	getAllAllocations: getallallocations,
 
 	// PATCH
 	updateUser: updateuser,

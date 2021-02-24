@@ -1,28 +1,28 @@
 {
-  "_from": "nodeactyl-v1-support@^1.4.8",
-  "_id": "nodeactyl-v1-support@1.4.8",
+  "_from": "nodeactyl-v1-support@^1.5.9",
+  "_id": "nodeactyl-v1-support@1.5.9",
   "_inBundle": false,
-  "_integrity": "sha512-W3LTjcsJo4/VqrYgu2yr2VCtOaF3wpL3Y+xJKAZmFSzUrDACqGDnNnRasCde0eo1nJ8nYPi5HvBOW2z1WuNHIg==",
+  "_integrity": "sha512-DJiQ95ZcRalW5PyH/VGatyE+IGY5xso4T4x4k78lc6u/Lh89lKkVOPFyKgrYPqmtXWu/vNp5RA1TLoAtPaAtaQ==",
   "_location": "/nodeactyl-v1-support",
   "_phantomChildren": {},
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "nodeactyl-v1-support@^1.4.8",
+    "raw": "nodeactyl-v1-support@^1.5.9",
     "name": "nodeactyl-v1-support",
     "escapedName": "nodeactyl-v1-support",
-    "rawSpec": "^1.4.8",
+    "rawSpec": "^1.5.9",
     "saveSpec": null,
-    "fetchSpec": "^1.4.8"
+    "fetchSpec": "^1.5.9"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/nodeactyl-v1-support/-/nodeactyl-v1-support-1.4.7.tgz",
-  "_shasum": "7ed937e8e7fc350fc1adc9e5cff2cbc3ac6d0916",
-  "_spec": "nodeactyl-v1-support@^1.4.8",
-  "_where": "/root/client",
+  "_resolved": "https://registry.npmjs.org/nodeactyl-v1-support/-/nodeactyl-v1-support-1.4.8.tgz",
+  "_shasum": "e83e5a31c61867850673c4a0428d3009d4b73587",
+  "_spec": "nodeactyl-v1-support@^1.5.9",
+  "_where": "C:\\Users\\engin\\Desktop\\Development\\RedHost Client",
   "author": {
     "name": "EiskalterFreund"
   },
@@ -45,5 +45,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.4.8"
+  "version": "1.5.9"
 }

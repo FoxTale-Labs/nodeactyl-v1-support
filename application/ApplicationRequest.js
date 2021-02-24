@@ -75,6 +75,22 @@ class Request {
 				const err = createError(request, error, data);
 				if (err) throw err;
 			});
+		} else if (request == "GetAllAllocations") {
+			return axios.default.get(splitted, {
+				maxRedirects: 5,
+				headers: {
+					'Authorization': 'Bearer ' + this.key,
+					'Content-Type': 'application/json',
+					'Accept': 'Application/vnd.pterodactyl.v1+json',
+				},
+			}).then(response => {
+				if (request == 'GetAllAllocations') {
+					return response.data.data;
+				}
+			}).catch(error => {
+				const err = createError(request, error, data);
+				if (err) throw err;
+			});
 		}
 	}
 
@@ -296,6 +312,8 @@ function getUrl(request, host, data) { // _data = nullable
 	} 
 	else if(request == 'GetAllUsersPagination') {
 		return host + '/api/application/users?page=' + data;
+	} else if (request == "GetAllAllocations") {
+		return host + '/api/application/nodes/' + data + "/allocations";
 	}
 }
 
