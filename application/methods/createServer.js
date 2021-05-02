@@ -17,23 +17,23 @@ const req = require('../ApplicationRequest.js');
  *
  * @yields Object (refer to docs for schema);
  */
-function createServer(allocation, Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
+function createServer(allocationID, Version, NameOfServer, OwnerID, EggID, DockerImage,
 	StartupCmd, RAM, Swap, Disk, IO, CPU,
-	AmountOfDatabases, AmountOfAllocations, backups) {
-	const data = makeData(allocation, Version, NameOfServer, OwnerID, NestID, EggID, DockerImage, StartupCmd, RAM, Swap, Disk, IO, CPU, AmountOfDatabases, AmountOfAllocations, backups);
+	AmountOfDatabases, AmountOfAllocations, backups, node) {
+	const data = makeData(allocationID, Version, NameOfServer, OwnerID, EggID, DockerImage, StartupCmd, RAM, Swap, Disk, IO, CPU, AmountOfDatabases, AmountOfAllocations, backups, node);
 	const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
 	return Req.postRequest('CreateServer', data, null);
 }
 
-function makeData(allocation, Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
+function makeData(allocationID, Version, NameOfServer, OwnerID, EggID, DockerImage,
 	StartupCmd, RAM, Swap, Disk, IO, CPU,
-	AmountOfDatabases, AmountOfAllocations, backups) {
+	AmountOfDatabases, AmountOfAllocations, backups, node) {
 	return {
 		'name': NameOfServer,
 		'user': OwnerID,
-		'description': 'A Nodeactyl-v1-support server',
+		'description': '',
+		"node": node,
 		'egg': EggID,
-		'pack': NestID,
 		'docker_image': DockerImage,
 		'startup': StartupCmd,
 		'limits': {
@@ -58,12 +58,11 @@ function makeData(allocation, Version, NameOfServer, OwnerID, NestID, EggID, Doc
 			'BUILD_NUMBER': Version,
 			'INSTALL_REPO': Version,
 			"BOT_JS_FILE": "index.js",
-			"AUTO_UPDATE": true,
+			"AUTO_UPDATE": false,
 			"USER_UPLOAD": true
 		},
 		"allocation": {
-			"default": allocation,
-			'additional': []
+			"default": allocationID
 		},
 		'start_on_completion': true,
 		'skip_scripts': false,

@@ -17,19 +17,19 @@ const req = require('../ApplicationRequest.js');
  *
  * @yields Object (refer to docs for schema);
  */
-function updateBuild(id, RAM, Disk, IO, CPU,
+function updateBuild(id, allocation, RAM, Disk, IO, CPU,
 	AmountOfDatabases, AmountOfAllocations, Backups) {
-	const data = makeData(id, RAM, Disk, IO, CPU,
+	const data = makeData(id, allocation, RAM, Disk, IO, CPU,
 		AmountOfDatabases, AmountOfAllocations, Backups);
 	const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
 	return Req.patchRequest('UpdateBuild', data, null);
 }
 
-function makeData(id, RAM, Disk, IO, CPU,
+function makeData(id, allocation, RAM, Disk, IO, CPU,
 	AmountOfDatabases, AmountOfAllocations, Backups) {
 	return {
 		"id": id,
-		"allocation": "1",
+		"allocation": allocation,
 		'memory': RAM,
 		'swap': "0",
 		'disk': Disk,

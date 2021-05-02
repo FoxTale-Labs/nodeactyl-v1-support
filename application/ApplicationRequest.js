@@ -313,7 +313,7 @@ function getUrl(request, host, data) { // _data = nullable
 	else if(request == 'GetAllUsersPagination') {
 		return host + '/api/application/users?page=' + data;
 	} else if (request == "GetAllAllocations") {
-		return host + '/api/application/nodes/' + data + "/allocations";
+		return host + "/api/application/nodes/" + data + "/allocations"
 	}
 }
 
