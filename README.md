@@ -54,7 +54,7 @@ admin.FUNCTIONNAME(<NEEDED VALUES>).then((response) => {
 })
 ```
 
-NOTE: You can use every function from original nodeactyl: https://docs.nodeactyl.xyz/
+NOTE: You can use every function from original nodeactyl: https://docs.nodeactyl.dev/
 ---------------------------------------------------------------------------------------------------
 
 How our Version numbers work:
