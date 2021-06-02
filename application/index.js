@@ -37,6 +37,8 @@ function login(HOST, KEY, callback) {
 
 	process.env.APPLICATION_NODEACTYL_HOST = HOST;
 	process.env.APPLICATION_NODEACTYL_KEY = KEY;
+
+	console.log(HOST + '/api/application/users')
 	axios.get(HOST + '/api/application/users', {
 		responseEncoding: 'utf8',
 		maxRedirects: 5,
@@ -48,15 +50,14 @@ function login(HOST, KEY, callback) {
 	}).then(function(response) {
 		if (response.status == 404) {
 			callback(false, 'API Key is not valid! (Application)');
-		}
-		else {
+		} else {
 			callback(true);
 		}
 	}).catch(error => {
+		console.log(error)
 		if (error.response.status == 403) {
 			callback(false, 'API Key is not valid! (Application)');
-		}
-		else {
+		} else {
 			throw error;
 		}
 	});

@@ -44,15 +44,13 @@ function login(HOST, KEY, callback) {
 	}).then(function(response) {
 		if (response.status == 404) {
 			callback(false, 'API Key is not valid! (Application)');
-		}
-		else {
+		} else {
 			callback(true);
 		}
 	}).catch(error => {
 		if (error.response.status == 403) {
 			callback(false, 'API Key is not valid! (Application)');
-		}
-		else {
+		} else {
 			throw error;
 		}
 	});

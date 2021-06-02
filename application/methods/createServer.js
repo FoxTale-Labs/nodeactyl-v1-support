@@ -1,3 +1,4 @@
+const { version } = require('discord.js');
 const req = require('../ApplicationRequest.js');
 /**
  * @param {String} Version Version of the server to use
@@ -17,21 +18,21 @@ const req = require('../ApplicationRequest.js');
  *
  * @yields Object (refer to docs for schema);
  */
-function createServer(allocationID, Version, NameOfServer, OwnerID, EggID, DockerImage,
+function createServer(allocationID, Version, NameOfServer, Description, OwnerID, EggID, DockerImage,
 	StartupCmd, RAM, Swap, Disk, IO, CPU,
 	AmountOfDatabases, AmountOfAllocations, backups, node) {
-	const data = makeData(allocationID, Version, NameOfServer, OwnerID, EggID, DockerImage, StartupCmd, RAM, Swap, Disk, IO, CPU, AmountOfDatabases, AmountOfAllocations, backups, node);
+	const data = makeData(allocationID, Version, NameOfServer, Description, OwnerID, EggID, DockerImage, StartupCmd, RAM, Swap, Disk, IO, CPU, AmountOfDatabases, AmountOfAllocations, backups, node);
 	const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
 	return Req.postRequest('CreateServer', data, null);
 }
 
-function makeData(allocationID, Version, NameOfServer, OwnerID, EggID, DockerImage,
+function makeData(allocationID, Version, NameOfServer, Description, OwnerID, EggID, DockerImage,
 	StartupCmd, RAM, Swap, Disk, IO, CPU,
 	AmountOfDatabases, AmountOfAllocations, backups, node) {
 	return {
 		'name': NameOfServer,
 		'user': OwnerID,
-		'description': '',
+		'description': Description,
 		"node": node,
 		'egg': EggID,
 		'docker_image': DockerImage,
@@ -59,7 +60,44 @@ function makeData(allocationID, Version, NameOfServer, OwnerID, EggID, DockerIma
 			'INSTALL_REPO': Version,
 			"BOT_JS_FILE": "index.js",
 			"AUTO_UPDATE": false,
-			"USER_UPLOAD": true
+			"USER_UPLOAD": true,
+			"BOT_PY_FILE": "bot.py",
+			"REQUIREMENTS_FILE": "python requirements.txt",
+			"BEDROCK_VERSION": version,
+			"LD_LIBRARY_PATH": ".",
+			"SERVERNAME": NameOfServer,
+			"GAMEMODE": "survival",
+			"DIFFICULTY": "easy",
+			"CHEATS": "false",
+			"BUILD_TYPE": "recommended",
+			"PGDATABASE": ".",
+			"PGUSER": ".",
+			"PGROOT": ".",
+			"PGPASSWORD": ".",
+			"MINECRAFT_VERSION": Version,
+			"NUKKIT_VERSION": "latest",
+			"JARFILE": "bot.jar",
+			"VERSION": "latest",
+			"QUERY_PORT": "10101",
+			"FILE_PORT": "303030",
+			"SERVER_MOTD": "TeaSpeak\n\rHosted on PureNodes!",
+			"LD_LIBRARY_PATH": "./libs/",
+			"LD_PRELOAD": "./libs/libjemalloc.so.2",
+			"SERVER_JARFILE": "server.jar",
+			"MATCH": "ts3-manager-linux-x64",
+			"GITHUB_PACKAGE": "joni1802/ts3-manager",
+			"SERVER_VERSION": "latest",
+			"RELEASE_VERSION": "latest",
+			"CHANNEL_NAME": ".",
+			"CHANNEL_OWNER": ".",
+			"BOT_OAUTH_TOKEN": ".",
+			"USER_OAUTH_TOKEN": ".",
+			"BOT_TWITCH_USERNAME": ".",
+			"WEBPANEL_USERNAME": ".",
+			"WEBPANEL_PASSWORD": ".",
+			"YOUTUBE_API_KEY": ".",
+			"DISCORD_BOT_TOKEN": ".",
+			"PMMP_VERSION": "latest"
 		},
 		"allocation": {
 			"default": allocationID

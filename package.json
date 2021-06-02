@@ -1,35 +1,38 @@
 {
-  "_from": "nodeactyl-v1-support@^1.5.9",
-  "_id": "nodeactyl-v1-support@1.5.9",
+  "_args": [
+    [
+      "nodeactyl-v1-support@1.5.1"
+    ]
+  ],
+  "_from": "nodeactyl-v1-support@1.5.1",
+  "_id": "nodeactyl-v1-support@1.5.1",
   "_inBundle": false,
   "_integrity": "sha512-DJiQ95ZcRalW5PyH/VGatyE+IGY5xso4T4x4k78lc6u/Lh89lKkVOPFyKgrYPqmtXWu/vNp5RA1TLoAtPaAtaQ==",
   "_location": "/nodeactyl-v1-support",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "version",
     "registry": true,
-    "raw": "nodeactyl-v1-support@^1.5.9",
+    "raw": "nodeactyl-v1-support@1.5.1",
     "name": "nodeactyl-v1-support",
     "escapedName": "nodeactyl-v1-support",
-    "rawSpec": "^1.5.9",
+    "rawSpec": "1.5.1",
     "saveSpec": null,
-    "fetchSpec": "^1.5.9"
+    "fetchSpec": "1.5.1"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/nodeactyl-v1-support/-/nodeactyl-v1-support-1.4.8.tgz",
-  "_shasum": "e83e5a31c61867850673c4a0428d3009d4b73587",
-  "_spec": "nodeactyl-v1-support@^1.5.9",
-  "_where": "C:\\Users\\engin\\Desktop\\Development\\RedHost Client",
+  "_shasum": "7ed937e8e7fc350fc1adc9e5cff2cbc3ac6d0916",
+  "_spec": "1.5.1",
+  "_where": "C:\\Users\\Engin\\Desktop\\Development\\Terra-X\\client",
   "author": {
     "name": "EiskalterFreund"
   },
   "bugs": {
     "url": "https://github.com/EiskalterFreund/Nodeactyl-v1-support/"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "axios": "^0.21.0"
   },
@@ -45,5 +48,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.5.9"
+  "version": "1.5.1"
 }

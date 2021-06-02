@@ -39,7 +39,7 @@ class Request {
 				const err = createError(request, error, data);
 				if (err) throw err;
 			});
-		} else if (request == "GetUserInfo" || request == "GetAllUsers") {
+		} else if (request == "GetUserInfo" || request == "GetAllUsers" || request == "GetAllUsersPagination") {
 			return axios.default.get(splitted, {
 				maxRedirects: 5,
 				headers: {
@@ -48,10 +48,10 @@ class Request {
 					'Accept': 'Application/vnd.pterodactyl.v1+json',
 				},
 			}).then(response => {
-				if (request == 'GetAllUsers') {
+				if (request == 'GetAllUsers' || request == "GetAllUsersPagination") {
 					return response.data.data;
 				} else if (request == 'GetUserInfo') {
-					return response.data.data;
+					return response.data.attributes;
 				}
 			}).catch(error => {
 				const err = createError(request, error, data);
@@ -179,7 +179,7 @@ class Request {
 	}
 	// Third arg is nullable
 	patchRequest(request, data, _data) {		
-		const URL = getUrl(request, this.host, data); // data is nullable
+		const URL = getUrl(request, this.host, data, _data); // data is nullable
 
 		var splittedURL = URL.split('/')
 		var splitted = '';
@@ -276,11 +276,16 @@ const users = ['CreateUser', 'GetAllUsers'];
 const user = ['EditUser', 'DeleteUser', 'GetUserInfo'];
 const nodes = ['GetAllNodes', 'CreateNode'];
 const node = ['GetNodeInfo', 'DeleteNode'];
-function getUrl(request, host, data) { // _data = nullable
+function getUrl(request, host, data, _data) { // _data = nullable
 	if (user.indexOf(request) > -1) {
-		return host + '/api/application/users/' + data;
+		if (_data != null) {
+			return host + '/api/application/users/' + _data;
+		} else {
+			return host + '/api/application/users/' + data;
+		}
 	}
 	else if (server.indexOf(request) > -1) {
+		if (data != undefined)  return host + '/api/application/servers?page=' + data;
 		return host + '/api/application/servers';
 	}
 	else if (server.indexOf(request) > -1) {
@@ -313,7 +318,7 @@ function getUrl(request, host, data) { // _data = nullable
 	else if(request == 'GetAllUsersPagination') {
 		return host + '/api/application/users?page=' + data;
 	} else if (request == "GetAllAllocations") {
-		return host + "/api/application/nodes/" + data + "/allocations"
+		return host + "/api/application/nodes/" + data[0] + "/allocations?page=" + data[1]
 	}
 }
 

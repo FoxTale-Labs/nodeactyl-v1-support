@@ -45,7 +45,7 @@ admin.login("YOUR HOST", "YOUR ADMIN API KEY", (logged_in, msg) => {
 ```
 And then you can use any funtion you want:
 ```javascript
-client.FUNCTIONNAME('server_id').then((response) => {
+client.FUNCTIONNAME(<NEEDED VALUES>).then((response) => {
 	// and now functions with response for example "consle.log(response)" or what you want
 })
 
@@ -54,7 +54,7 @@ admin.FUNCTIONNAME(<NEEDED VALUES>).then((response) => {
 })
 ```
 
-NOTE: You can use every function from original nodeactyl: https://docs.nodeactyl.dev/
+NOTE: You can use every function from original nodeactyl: https://docs.nodeactyl.xyz/
 ---------------------------------------------------------------------------------------------------
 
 How our Version numbers work:
@@ -62,7 +62,7 @@ How our Version numbers work:
 - The first number means the release number.
 - The second number means function release.
 - The third number means Bug fix version code.
-<p>Example: 1.2.4 = Release one, function update two, bug fix update two.</p>
+<p>Example: 1.5.1 = Release one, function update two, bug fix update two.</p>
 --------------------------------------------------------------------------------------------------
 
 Disclaimer
